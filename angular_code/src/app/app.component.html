@@ -1,0 +1,98 @@
+<link rel="stylesheet" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<body id="main" class="bg-blueGray-50">
+  <header>
+    <nav class="p-6">
+      <div class="flex justify-between items-center">
+        <button><h1 routerLink = "/helpingHands" class="pr-6 border-r-2 text-2xl font-bold text-gray-500">Helping Hands</h1></button>
+        <div class="flex justify-between flex-grow">
+          <div class="flex ml-6 items-center">
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-4 cursor-pointer text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </span>
+            <input class="outline-none text-sm flex-grow bg-gray-100" type="text" placeholder="Search" />
+          </div>
+          <div *ngIf = "isClientUndefined() && isHelperUndefined()" class="md:flex space-x-6 hidden">
+            <button  routerLink = "/addhelper" class="text-gray-500 text-md">Join us as Helper</button>
+            <button routerLink = "/addclient" class="text-gray-500 text-md">Sign up</button>
+            <button (click)="toggleDropdown();" class="text-gray-500 dropdown text-md">Log In
+              <div id="dropdown"  class="dropdown-content absolute right-0 rounded-md mt-2">
+                <a class="rounded-md" routerLink = "/clientlogin">User</a>
+                <a class="rounded-md" routerLink = "/helperlogin">Helper</a>
+              </div>
+            </button>
+          </div>
+
+          <div *ngIf = "!isClientUndefined() && isHelperUndefined()" class="md:flex space-x-6 hidden">
+            <button (click)="toggleDropdown();" class="text-gray-500 text-md">{{loggedClient.name}}
+                <div id="dropdown" style="display: none; min-width: 13rem;"  class="absolute right-0 mt-2 bg-white rounded-md shadow-lg overflow-hidden z-20 mr-2">
+                  <a (click) = "onSelectingClient(loggedClient);" class="rounded-md flex items-center px-4 py-3 border-b hover:bg-gray-100 -mx-2" routerLink = "/clientprofile">
+                    <img class="h-8 w-8 rounded-full object-cover mx-1" src="{{loggedClient.imgData}}" alt="avatar">
+                    <h2 class="text-gray-800 text-lg mx-2"> Profile</h2>
+                  </a>
+                  <a (click)="logOut()" class="rounded-md flex items-center px-4 py-3 border-b hover:bg-gray-100 -mx-2" >
+                    <i class="fas fa-sign-out-alt mr-2 text-lg text-blueGray-400"></i>
+                    <h2 class="text-gray-600 text-lg mx-2"> Log Out</h2>
+                  </a>
+                </div>
+            </button>            
+          </div>
+
+          <div *ngIf = "isClientUndefined() && !isHelperUndefined()" class="md:flex space-x-6 hidden">
+            <button (click)="toggleDropdown();" class="text-gray-500 text-md">{{loggedHelper.name}}
+              <div id="dropdown" style="display: none; min-width: 13rem;"  class="absolute right-0 mt-2 bg-white rounded-md shadow-lg overflow-hidden z-20 min-w-50">
+                <a (click) = "onSelectingHelper(loggedHelper);" class="rounded-md flex items-center px-4 py-3 border-b hover:bg-gray-100 -mx-2" routerLink = "/helperprofile">
+                  <img class="h-8 w-8 rounded-full object-cover mx-1" src="{{loggedHelper.imgData}}" alt="avatar">
+                  <h2 class="text-gray-800 text-lg mx-2"> Profile</h2>
+                </a>
+                <a (click)="logOut()"  class="rounded-md flex items-center px-4 py-3 border-b hover:bg-gray-100 -mx-2" >
+                  <i class="fas fa-sign-out-alt mr-2 text-lg text-blueGray-400"></i>
+                  <h2 class="text-gray-600 text-lg mx-2"> Log Out</h2>
+                </a>
+              </div>
+            </button>            
+          </div>
+          <!-- <div *ngIf = "isClientUndefined() && !isHelperUndefined()" class="md:flex space-x-6 hidden">
+            <button (click)="toggleDropdown()" class="text-gray-500 dropdown text-md">Log In
+              <div id="dropdown" style="display: none;" class="dropdown-content absolute right-0 rounded-md">
+                <a class="rounded-md" routerLink = "/clientlogin">User</a>
+                <a class="rounded-md" routerLink = "/helperlogin">Helper</a>
+              </div>
+            </button>
+          </div> -->
+        </div>
+      </div>
+    </nav>
+  </header>
+</body>
+
+<!-- <app-helper-profile [helper] = "slectedHelper"></app-helper-profile> -->
+
+<router-outlet></router-outlet>
+
+<!-- <button class=" w-40 ring-1 ring-black ring-opacity-5 focus:outline-none
+            flex
+            items-center
+            justify-center
+            rounded-md
+            border border-gray-900 border-opacity-100
+            hover:bg-gray-300" type="submit"
+            routerLink = "/addhelper" >
+              
+                Join us as Helper
+              
+            </button> -->
+
+<!-- <button class=" w-40 ring-1 ring-black ring-opacity-5 focus:outline-none
+  flex
+  items-center
+  justify-center
+  rounded-md
+  border border-gray-900 border-opacity-100
+  hover:bg-gray-300" type="submit"
+  routerLink = "/findhelper" >Find Helper</button> -->

@@ -1,0 +1,279 @@
+<link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
+<link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+
+<!-- <form #inputDetails = "ngForm" class="w-full max-w-lg" (ngSubmit) = "helperFilter(inputDetails.value)">
+    <div class="flex flex-wrap -mx-3 mb-6">
+        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="domain">
+             Domain
+          </label>
+          <div class="relative">
+          <select name="domain" (change)="resetHelperByLocation()" ngModel class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="domain">
+            <option value="" disabled selected>Select Domain of Worker</option>
+            <option *ngFor = "let domain of domains">{{domain}}</option>
+          </select>
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+          </div>
+          </div>
+        </div>
+    </div>
+    
+    <div class="flex flex-wrap -mx-3 mb-2">
+        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
+            State
+            </label>
+            <div class="relative">
+            <select onchange="makeSubmenu(this.value)" (change)="resetHelperByLocation()" name="state" ngModel class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                <option value="" disabled selected>Select State</option>
+                <option *ngFor = "let state of states">{{state}}</option>
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+            </div>
+            </div>
+        </div>
+
+        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
+            City
+            </label>
+            <div class="relative">
+            <select size="1" name="city"  (change)="resetHelperByLocation()" ngModel class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city">
+                <option value="" disabled selected>Select City</option>
+            </select>
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+            </div>
+            </div>
+        </div>
+
+        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+                Zip
+            </label>
+            <input name="zip" ngModel class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="90210">
+        </div>
+    </div>
+    <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+        <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          Search
+        </button>
+    </div>
+</form> -->
+
+
+
+<section class=" bg-blueGray-50">
+    <div class="w-full lg:w-6/12 px-4 mx-auto pt-6">
+      <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200 border-0">
+        <div class="rounded-t mb-0 px-6 pt-6">
+          <!-- <div class="text-center mb-3">
+            <h6 class="text-blueGray-500 text-sm font-bold">
+              Sign up with
+            </h6>
+          </div>
+          <div class="btn-wrapper text-center">
+            <button class="bg-white active:bg-blueGray-50 text-blueGray-700 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-2 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs ease-linear transition-all duration-150" type="button">
+              <img alt="..." class="w-5 mr-1" src="https://demos.creative-tim.com/notus-js/assets/img/github.svg">Github </button>
+            <button class="bg-white active:bg-blueGray-50 text-blueGray-700 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs ease-linear transition-all duration-150" type="button">
+              <img alt="..." class="w-5 mr-1" src="https://demos.creative-tim.com/notus-js/assets/img/google.svg">Google</button>
+             
+          </div> -->
+          <h2 class="block uppercase text-center text-blueGray-600 text-3xl font-bold mb-2">Find & Hire</h2>
+          <hr class="mt-6 border-b-1 border-blueGray-300">
+        </div>
+        <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+          <div class="text-blueGray-400 text-center mb-3 font-bold">
+          </div>
+          <form #inputDetails = "ngForm" (ngSubmit) = "helperFilter(inputDetails.value)">
+
+            <div class="relative w-full mb-3 pt-4">
+                <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">What you are searching for?</label>
+                <div class="relative">
+                  <select name="domain" (change)="resetHelperByLocation()" ngModel class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" id="grid-state">
+                    <option value="" disabled selected>Select Domain</option>
+                    <option *ngFor = "let domain of domains">{{domain}}</option>
+                  </select>
+                </div>            
+            </div>
+            
+            <h6 class="text-blueGray-500 text-center text-base font-bold mt-10">
+              Select location 
+            </h6>
+
+            <hr class="mt-3 border-b-1 border-blueGray-300">
+
+            
+              <div class="relative w-full mb-3 pt-7">
+                <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password"> State</label>
+                <div class="relative">
+                  <select onchange="makeSubmenu(this.value)" name="state" (change)="resetHelperByLocation()" ngModel class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" id="grid-state">
+                    <option value="" disabled selected>Select State</option>
+                    <option *ngFor = "let state of states">{{state}}</option>
+                  </select>
+                </div>            
+              </div>
+
+              <div class="relative w-full mb-3">
+                <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password"> City.</label>
+                <div class="relative">
+                  <select size="1" name="city" (change)="resetHelperByLocation()" ngModel class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" id="grid-city">
+                    <option value="" disabled selected>Select City</option>
+                  </select>
+                </div>            
+              </div>
+
+            
+    
+    
+            <div class="text-center mt-6">
+              <button (click) = "scroll" class="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150" type="submit">
+                Search
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <section *ngIf = "helperByLocation.length !=0" id="list" class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="flex flex-wrap w-full mb-10">
+            <div class="lg:w-1/2 w-full mb-0 lg:mb-0">
+              <h1
+                class="block uppercase text-blueGray-600 text-3xl font-bold mb-2"
+              >
+                {{inputDetails.value.domain}}'s ( {{inputDetails.value.city}}, {{inputDetails.value.state}} )
+              </h1>
+            </div>
+          </div>
+          <div class="flex flex-wrap -m-4">
+            <div *ngFor = "let helper of helperByLocation" class="xl:w-1/3 md:w-1/2 p-4">
+              <div class="bg-blueGray-200 p-6 rounded-lg">
+                <img
+                  class="h-44 rounded w-full object-cover object-center mb-6"
+                  src="{{helper.imgData}}"
+                  alt="{{helper.name}}"
+                />
+                <button (click) = "viewHelperProfile(helper)" ><h2 class="text-lg text-gray-900 font-medium title-font mb-2" style="font-weight: bold">
+                  {{helper.name}} <h5 style="font-weight: lighter;">({{inputDetails.value.domain}})</h5>
+                </h2></button>
+                
+                <p><i class="fas fa-map-marker-alt mr-2 text-lg text-blueGray-600"></i>{{helper.location.city}}, {{helper.location.state}}</p>
+                <div class="flex space-x-3 mb-4 mt-3 text-base font-medium">
+                  <div class="flex-auto items-center justify-center flex space-x-3">
+                    <button (click) = "hire(helper)"
+                      class="
+                        w-full
+                        h-10
+                        flex
+                        items-center
+                        justify-center
+                        rounded-md
+                        bg-black
+                        text-white
+                      "
+                      type="submit"
+                    >
+                      Hire
+                    </button>
+                    <!-- <button
+                      class="
+                        w-1/2
+                        flex
+                        items-center
+                        justify-center
+                        rounded-md
+                        border border-gray-300
+                        hover:bg-gray-300
+                      "
+                      type="button"
+                    >
+                      Add to bag
+                    </button> -->
+                  </div>
+                  <!-- <button
+                    class="
+                      flex-none flex
+                      items-center
+                      justify-center
+                      w-9
+                      h-9
+                      rounded-md
+                      text-gray-400
+                      border border-gray-300
+                      hover:bg-gray-300
+                    "
+                    type="button"
+                    aria-label="like"
+                  >
+                    <svg width="20" height="20" fill="currentColor">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                      />
+                    </svg>
+                  </button> -->
+                </div>
+              </div>
+            </div>            
+          </div>
+        </div>
+    </section>
+
+    <footer class="relative  pt-8 pb-6 mt-8">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap items-center md:justify-between justify-center">
+          <div class="w-full md:w-6/12 px-4 mx-auto text-center">
+            <!-- <div class="text-sm text-blueGray-500 font-semibold py-1">
+              Made with <a href="https://www.creative-tim.com/product/notus-js" class="text-blueGray-500 hover:text-gray-800" target="_blank">Notus JS</a> by <a href="https://www.creative-tim.com" class="text-blueGray-500 hover:text-blueGray-800" target="_blank"> Creative Tim</a>.
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </footer>
+  </section>  
+
+
+
+<!-- <div *ngIf = "helperByLocation">
+    <ul>
+        <li *ngFor = "let helper of helperByLocation">{{helper.name}}</li>
+    </ul>
+</div> -->
+
+<div *ngIf = "helperByLocation.length == 0 && search">
+    <h3>There is no {{inputDetails.value.domain}} providing service at {{inputDetails.value.city}}</h3>
+</div>

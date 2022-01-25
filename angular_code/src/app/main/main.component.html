@@ -1,0 +1,106 @@
+<link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
+<link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+
+
+<header>
+<div class="container bg-cover bg-no-repeat bg-center mx-auto bg-gray-400 h-96 rounded-md flex items-center" style="background-image: url(https://image.freepik.com/free-photo/tourists-go-up-hill-sunrise_1150-19692.jpg);">
+    <div class="sm:ml-20 text-gray-700 text-center sm:text-left">
+      <h1 class="text-4xl font-bold mb-20">
+        A smart way to find & hire Helpers near you.
+      </h1>
+      <p class="text-base inline-block sm:block">Find multiple professionally verified (& Covid-19 safe) Blue-Collar Workers <br> near you, connect with them directly & hire anyone you like, <br> without the middlemen in between</p>
+      <button *ngIf = "helper == undefined && client != undefined" routerLink = "/findhelper" class="mt-8 text-gray-200  hover:shadow-md shadow px-4 py-2 bg-gray-600 rounded">Find & Hire</button>
+      <button *ngIf = "helper != undefined" (click) = "helperAccSigned()" class="mt-8 text-gray-200 px-4 py-2 bg-gray-600  hover:shadow-md shadow rounded">Find & Hire</button>
+      <button *ngIf = "client == undefined && helper == undefined" routerLink = "/clientlogin" class="mt-8 text-gray-200  hover:shadow-md shadow px-4 py-2 bg-gray-600 rounded">Find & Hire</button>
+    </div>
+</div>
+</header>
+<main class="py-16 container mx-auto px-6 md:px-0">
+  <section>
+    <h1 class="text-3xl font-bold text-gray-600 mb-10">Find & Hire</h1>
+    <div class="grid sm:grid-cols-3 gap-4 grid-cols-3">
+      <div *ngFor = "let domain of domains" (click) = "redirect();">
+        <div class="bg-cover bg-no-repeat bg-center bg-gray-300 h-44 domain" [ngStyle]="{'background-image': 'url(' + domain.imageUrl + ')'}"></div>
+        <h3 class="text-lg font-semibold text-gray-500 mt-2 domain">{{domain.domain}}<span class="text-gray-700"></span></h3>
+      </div>
+      <!-- <div>
+        <div class="bg-gray-300 h-44"></div>
+        <h3 class="text-lg font-semibold text-gray-500 mt-2">Office Workers <span class="text-gray-700"></span></h3>
+      </div>
+      <div>
+        <div class="bg-gray-300 h-44"></div>
+        <h3 class="text-lg font-semibold text-gray-500 mt-2">Drivers <span class="text-gray-700"></span></h3>
+      </div> -->
+    </div>
+    <hr class="w-40 my-14 border-4 rounded-md sm:mx-0 mx-auto" />
+  </section>
+  <section>
+    <h1 class="inline-block text-gray-600 font-bold text-3xl">
+      About Us
+    </h1>
+
+    <div class=" gap-4 mt-10">
+       <p> Helping Hands is a startup. With a vision to end poverty, forced labour, worker's exploitation, and human trafficking, Helping Hands is working towards creating an ecosystem of inclusive economic growth for unorganised blue-collar workers. Helping Hands uses a complex algorithm via its different digital platforms to enable blue-collar workers to find local employment opportunities. In turn, the platform helps you in finding & hiring nearby professionally verified blue-collar workers without the middlemen in between.
+       </p>
+
+    </div>
+  </section>
+</main>
+<footer class=" bg-blueGray-50 mb-6 px-6 md:px-0">
+  <div class="grid gap-5 grid-cols-3 container mx-auto space-x-6">
+    <div>
+      <h1 class="text-2xl font-bold text-gray-500">Heping Hands</h1>
+      <p class="py-1.5 mb-2">The largest online community to hire <br> Helpers in India.</p>
+      <span class="py-3">© Helping Hands 2021.</span>
+    </div>
+    <div class="pt-1">
+      <ul>
+        <h3 class="text-xl font-bold text-gray-500">Contact Info</h3>
+        <li class="py-1.5"><i class="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400"></i>White Hills, Banglore - 320431, India</li>
+        <li class="py-1.5"><i class="fas fa-phone-alt mr-2 text-lg text-blueGray-400"></i>+91-5643245231</li>
+        <li class="py-1.5"><i class="fas fa-envelope mr-2 text-lg text-blueGray-400"></i>contact@helpinghands.com</li>
+      </ul>
+    </div>
+    <div class="pt-2">
+      <ul>
+        
+        <!-- <li>Helsinki</li>
+        <li>Espoo</li>
+        <li>Ruka</li>
+        <li>Tampere</li>
+        <li>Turku</li> -->
+      </ul>
+    </div>
+    <div class="pt-2">
+      <ul>
+        <!-- <li>Kuopio</li>
+        <li>Mikkeli</li>
+        <li>Espoo</li>
+        <li>Vantaa</li>
+        <li>Ahvenanmaa</li> -->
+      </ul>
+    </div>
+    <!-- <div class="pt-2">
+      <div>
+        <div class="flex space-x-4 text-gray-500 text-center">
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          </span>
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+          </span>
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M5 3a2 2 0 00-2 2v1c0 8.284 6.716 15 15 15h1a2 2 0 002-2v-3.28a1 1 0 00-.684-.948l-4.493-1.498a1 1 0 00-1.21.502l-1.13 2.257a11.042 11.042 0 01-5.516-5.517l2.257-1.128a1 1 0 00.502-1.21L9.228 3.683A1 1 0 008.279 3H5z" /></svg>
+          </span>
+        </div>
+        <div class="flex mt-12">
+          <p>Privacy & Cookies</p>
+          <p>Terms of use</p>
+        </div>
+      </div>
+    </div> -->
+  </div>
+</footer>

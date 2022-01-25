@@ -1,0 +1,48 @@
+export const states = [ "Andhra Pradesh",
+    "Arunachal Pradesh",
+    "Assam",
+    "Bihar",
+    "Chhattisgarh",
+    "Goa",
+    "Gujarat",
+    "Haryana",
+    "Himachal Pradesh",
+    "Jammu and Kashmir",
+    "Jharkhand",
+    "Karnataka",
+    "Kerala",
+    "Madhya Pradesh",
+    "Maharashtra",
+    "Manipur",
+    "Meghalaya",
+    "Mizoram",
+    "Nagaland",
+    "Odisha",
+    "Punjab",
+    "Rajasthan",
+    "Sikkim",
+    "Tamil Nadu",
+    "Telangana",
+    "Tripura",
+    "Uttarakhand",
+    "Uttar Pradesh",
+    "West Bengal",
+    "Andaman and Nicobar Islands",
+    "Chandigarh",
+    "Dadra and Nagar Haveli",
+    "Daman and Diu",
+    "Delhi",
+    "Lakshadweep",
+    "Puducherry"
+];
+
+export const domains = ["Domestic Worker", "Baby Sitter", "Chef", "Driver", "Store Worker", "Construction Worker"];
+
+export const domains2 = [
+    {domain: "Domestic Workers", imageUrl: "https://image.freepik.com/free-photo/everything-is-fresh-clean-cropped-portrait-housecleaner-maid-uniform-holding-pack-white-towels-employee-brought-everything-customer-ordered-his-hotel-room_176420-11938.jpg"},
+    {domain: "Baby Sitter", imageUrl: "https://image.freepik.com/free-photo/pretty-sister-spending-time-with-her-baby-brother-sitting-floor-bedroom-beautiful-young-babysitter-playing-with-little-boy-indoors-holding-stuffed-toy-duck-infancy-childcare-motherhood_344912-7.jpg"},
+    {domain: "Chef", imageUrl: "https://image.freepik.com/free-photo/happy-young-cook-uniform-holding-salad_171337-5343.jpg"},
+    {domain: "Drivers", imageUrl: "https://image.freepik.com/free-photo/professional-middle-aged-bearded-trucker-standing-by-his-semi-truck-holding-thumbs-up_342744-1318.jpg"},
+    {domain: "Store Workers", imageUrl: "https://image.freepik.com/free-photo/portrait-young-worker-hard-hat-large-metalworking-plant_146671-19570.jpg"},
+    {domain: "Construction Workers", imageUrl: "https://image.freepik.com/free-photo/front-view-young-male-builder-uniform-with-protective-helmet-white-background_140725-68452.jpg"}
+]
