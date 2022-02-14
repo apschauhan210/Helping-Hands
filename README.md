@@ -1,7 +1,8 @@
 # [Helping-Hands](http://ngcodehelpinghands2.s3-website.us-east-2.amazonaws.com/helpingHands)
 
-Helping Hands is a website to hire workers based on the provided location. 
+Helping Hands is a website to hire workers based on the provided location. <br />
 On the other hand it helps workers to get work wihtout the involvement of any middlemen in between. 
+
 
 ## Quick start
 
