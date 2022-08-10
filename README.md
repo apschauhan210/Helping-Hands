@@ -33,7 +33,6 @@ This project is deployed using AWS and can be viewed [here](http://hhands.s3-web
 * Spring Boot
 * Angular
 * MySQL
-* Twilio API
 * Tailwind
 
 ## Author
