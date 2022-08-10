@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'http://helpinghands2.us-east-2.elasticbeanstalk.com'
+  apiBaseUrl: 'http://localhost:8080'
 };
 
 /*
